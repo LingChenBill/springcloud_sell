@@ -16,7 +16,6 @@ public interface ProductCategoryRepository extends JpaRepository<ProductCategory
 
     /**
      * 获取类目type列表
-     *
      * @param categoryTypeList
      * @return
      */
