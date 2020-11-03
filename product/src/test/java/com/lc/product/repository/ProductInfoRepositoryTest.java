@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -28,6 +29,15 @@ class ProductInfoRepositoryTest {
     @Test
     public void findByProductStatus() throws Exception {
         List<ProductInfo> list = productInfoRepository.findByProductStatus(0);
+        Assertions.assertTrue(list.size() > 0);
+    }
+
+    /**
+     * 查询包含ID的商品.
+     */
+    @Test
+    public void findByProductIdIn() {
+        List<ProductInfo> list = productInfoRepository.findByProductIdIn(Arrays.asList("157875196366160022", "157875196366164846"));
         Assertions.assertTrue(list.size() > 0);
     }
 }

@@ -12,3 +12,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+# 配置ribbon轮询方法
+#product:
+#  ribbon:
+#    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalance.RandomRule

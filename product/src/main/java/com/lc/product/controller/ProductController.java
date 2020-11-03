@@ -10,9 +10,7 @@ import com.lc.product.vo.ProductVO;
 import com.lc.product.vo.ResultVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +27,7 @@ public class ProductController {
     private CategoryService categoryService;
 
     /**
-     * 查询所有在架的商品
+     * 查询所有在架的商品.
      * 获取类目type列表
      * 查询类目
      * 构造数据
@@ -70,6 +68,16 @@ public class ProductController {
         }
 
         return ResultVOUtil.success(productVOList);
-
     }
+
+    /**
+     * 查询商品列表(为订单微服务提供).
+     * @param productIdList
+     * @return
+     */
+    @PostMapping("/listForOrder")
+    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList) {
+        return productService.findList(productIdList);
+    }
+
 }

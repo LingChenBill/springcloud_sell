@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 商品服务实现类。
+ * 商品服务实现类.
  * @description:
  * @author: lingchen
  * @date: 2020/11/1
@@ -22,11 +22,21 @@ public class ProductServiceImpl implements ProductService {
     private ProductInfoRepository productInfoRepository;
 
     /**
-     * 查询所有在架商品
+     * 查询所有在架商品.
      * @return
      */
     @Override
     public List<ProductInfo> findUpAll() {
         return productInfoRepository.findByProductStatus(ProductStatusEnum.UP.getCode());
+    }
+
+    /**
+     * 查询商品列表.
+     * @param productIdList
+     * @return
+     */
+    @Override
+    public List<ProductInfo> findList(List<String> productIdList) {
+        return productInfoRepository.findByProductIdIn(productIdList);
     }
 }
