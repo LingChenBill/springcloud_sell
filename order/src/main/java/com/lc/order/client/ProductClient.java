@@ -1,6 +1,7 @@
 package com.lc.order.client;
 
 import com.lc.order.dataobject.ProductInfo;
+import com.lc.order.dto.CartDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,8 +19,11 @@ import java.util.List;
 public interface ProductClient {
 
     @GetMapping("/msg")
-    public String productMsg();
+    String productMsg();
 
     @PostMapping("/product/listForOrder")
     List<ProductInfo> listForOrder(@RequestBody List<String> productIdList);
+
+    @PostMapping("/product/decreaseStock")
+    void decreaseStock(@RequestBody List<CartDto> cartDtoList);
 }

@@ -2,6 +2,7 @@ package com.lc.product.controller;
 
 import com.lc.product.dataobject.ProductCategory;
 import com.lc.product.dataobject.ProductInfo;
+import com.lc.product.dto.CartDto;
 import com.lc.product.service.CategoryService;
 import com.lc.product.service.ProductService;
 import com.lc.product.utils.ResultVOUtil;
@@ -78,6 +79,15 @@ public class ProductController {
     @PostMapping("/listForOrder")
     public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList) {
         return productService.findList(productIdList);
+    }
+
+    /**
+     * 扣库存(为订单微服务提供).
+     * @param cartDtoList
+     */
+    @PostMapping("/decreaseStock")
+    public void decreaseStock(@RequestBody List<CartDto> cartDtoList) {
+        productService.decreaseStock(cartDtoList);
     }
 
 }

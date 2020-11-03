@@ -1,6 +1,7 @@
 package com.lc.product.service;
 
 import com.lc.product.dataobject.ProductInfo;
+import com.lc.product.dto.CartDto;
 
 import java.util.List;
 
@@ -24,4 +25,11 @@ public interface ProductService {
      * @return
      */
     public List<ProductInfo> findList(List<String> productIdList);
+
+    /**
+     * 扣库存.
+     * @param cartDtoList
+     */
+    public void decreaseStock(List<CartDto> cartDtoList);
+
 }

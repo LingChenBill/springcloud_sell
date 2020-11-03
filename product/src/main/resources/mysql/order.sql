@@ -13,6 +13,7 @@ create table `order_master` (
 	`update_time` timestamp not null default current_timestamp on update current_timestamp comment '修改时间',
 	primary key (`order_id`),
 	key `idx_buyer_openid` (`buyer_openid`)
+	CONSTRAINT `idx_order_id` FOREIGN KEY (`order_id`) REFERENCES `order_detail` (`order_id`)
 );
 
 -- 订单信息
@@ -29,7 +30,7 @@ create table `order_detail` (
 	`update_time` timestamp not null default current_timestamp on update current_timestamp comment '修改时间',
     primary key (`detail_id`),
     key `idx_order_id` (`order_id`),
-    foreign key (`order_id`) REFERENCES order_master(`order_id`)
+    -- foreign key (`order_id`) REFERENCES order_master(`order_id`)
 );
 
 

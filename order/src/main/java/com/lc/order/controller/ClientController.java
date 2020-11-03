@@ -2,6 +2,7 @@ package com.lc.order.controller;
 
 import com.lc.order.client.ProductClient;
 import com.lc.order.dataobject.ProductInfo;
+import com.lc.order.dto.CartDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -89,6 +90,16 @@ public class ClientController {
     public String getProductList() {
         List<ProductInfo> productInfoList = productClient.listForOrder(Arrays.asList("157875196366162707"));
         log.info("response={}", productInfoList);
+        return "OK";
+    }
+
+    /**
+     * 扣库存.
+     * @return
+     */
+    @GetMapping("/productDecreaseStock")
+    public String productDecreaseStock() {
+        productClient.decreaseStock(Arrays.asList(new CartDto("157875196366162707", 3)));
         return "OK";
     }
 }
