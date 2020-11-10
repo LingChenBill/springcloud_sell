@@ -20,8 +20,30 @@ class MqReceiverTest extends OrderApplicationTests {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
+    /**
+     * RabbitMQ消息发送测试.
+     */
     @Test
     public void send() {
         amqpTemplate.convertAndSend("myQueue", "now: " + new Date());
     }
+
+    /**
+     * RabbitMQ消息, 数码类消息发送测试.
+     */
+    @Test
+    public void sendComputer() {
+        amqpTemplate.convertAndSend("myOrder","computer", "now computer : " + new Date());
+    }
+
+    /**
+     * RabbitMQ消息, 水果类消息发送测试.
+     */
+    @Test
+    public void sendFruit() {
+        amqpTemplate.convertAndSend("myOrder","fruit", "now fruit : " + new Date());
+    }
+
+
+
 }
