@@ -32,6 +32,18 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <!--config client config.-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
+
+        <!--amqp config.-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
         <!--common config.-->
         <dependency>
             <groupId>com.lc</groupId>
