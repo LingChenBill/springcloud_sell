@@ -7,15 +7,17 @@ For further reference, please consider the following sections:
 * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.5.RELEASE/maven-plugin/reference/html/)
 * [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.3.5.RELEASE/maven-plugin/reference/html/#build-image)
 
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Service Registration and Discovery](https://spring.io/guides/gs/service-registration-and-discovery/)
+
 ### App端口:  
--Dserver.port=8081  
--Dserver.port=8082  
+-Dserver.port=8761  
+-Dserver.port=8762  
 
-1. 引导配置  
-bootstrap.yml  
+### Eureka server:
+访问path:  
+http://localhost:8761/  
+http://localhost:8762/
 
-2. 配置文件的加载顺序:  
-先找eureka, 再找bootstrap.yml中的配置的config微服务,拉取配置信息文件.  
-
-3. 测试拉取微服务config中的配置文件  
-http://localhost:8081/env/print  

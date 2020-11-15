@@ -12,6 +12,9 @@ The following guides illustrate how to use some features concretely:
 
 * [Centralized Configuration](https://spring.io/guides/gs/centralized-configuration/)
 
+### App端口:  
+-Dserver.port=80  
+
 1. 配置application.yml中的git配置时,出错.  
 c.s.e.MultipleJGitEnvironmentRepository : Stacktrace for: Could not fetch remote for main remote: https://github.com/  
 
