@@ -64,3 +64,12 @@ zuul:
 ```
 访问不到:  
 localhost:9000/myProduct/product/listForOrder  
+
+### zuulFilter
+检验token  
+http://localhost:9000/myProduct/product/list?token=123  
+
+AddResponseHeaderFilter  
+在post后置Filter中也可以添加信息:  
+如Response的头部信息中添加:  
+X-Foo: 93750c1f-ed14-41ca-b18b-52af80cc6a14
