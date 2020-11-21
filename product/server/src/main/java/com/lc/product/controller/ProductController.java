@@ -14,6 +14,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -35,7 +36,7 @@ public class ProductController {
      * 构造数据
      */
     @GetMapping("/list")
-    public ResultVO<ProductVO> list() {
+    public ResultVO<ProductVO> list(HttpServletRequest request) {
 
         // 查询所有在架的商品
         List<ProductInfo> productInfoList = productService.findUpAll();
