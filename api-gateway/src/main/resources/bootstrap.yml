@@ -24,3 +24,6 @@ eureka:
 ##    - /myProduct/product/listForOrder
 ##    - /product/product/listForOrder
 #    - /**/product/listForOrder
+#zuul:
+   # 忽略敏感头(全部微服务都可以传递cookie)
+#  sensitive-headers:

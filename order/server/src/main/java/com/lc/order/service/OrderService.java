@@ -16,4 +16,11 @@ public interface OrderService {
      * @return
      */
     public OrderDto create(OrderDto orderDto);
+
+    /**
+     * 完结订单(只能卖家操作).
+     * @param orderId
+     * @return
+     */
+    public OrderDto finish(String orderId);
 }

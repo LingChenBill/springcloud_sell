@@ -42,17 +42,17 @@ public class TokenFilter extends ZuulFilter {
     @Override
     public Object run() throws ZuulException {
 
-        RequestContext requestContext = RequestContext.getCurrentContext();
-        HttpServletRequest request = requestContext.getRequest();
+//        RequestContext requestContext = RequestContext.getCurrentContext();
+//        HttpServletRequest request = requestContext.getRequest();
 
-        // 这里从url参数里获取,也可以从cookie, header获取
-        String token = request.getParameter("token");
-        if (StringUtils.isEmpty(token)) {
-            // zuul返回失败.
-            requestContext.setSendZuulResponse(false);
-            // 返回401:没有权限状态码.
-            requestContext.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
-        }
+//        // 这里从url参数里获取,也可以从cookie, header获取
+//        String token = request.getParameter("token");
+//        if (StringUtils.isEmpty(token)) {
+//            // zuul返回失败.
+//            requestContext.setSendZuulResponse(false);
+//            // 返回401:没有权限状态码.
+//            requestContext.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
+//        }
 
         return null;
     }
