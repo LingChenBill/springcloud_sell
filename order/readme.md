@@ -19,3 +19,8 @@ bootstrap.yml
 
 3. 测试拉取微服务config中的配置文件  
 http://localhost:8081/env/print  
+
+4. hystrix dashborad  
+http://localhost:8081/hystrix  
+http://localhost:8081/actuator/hystrix.stream  
+postman中可以设置循环访问接口.  

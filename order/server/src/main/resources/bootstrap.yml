@@ -21,3 +21,26 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+hystrix:
+  command:
+    # 默认全局服务降级:过期时间配置.
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+    # 对单个方法进行服务降级.
+    getProductInfoList:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+  # 配置dashboard访问限制.
+  dashboard:
+    proxy-stream-allow-list: "*"
+# 开启dashboard中的actuator监控接口.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

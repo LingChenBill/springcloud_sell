@@ -79,7 +79,11 @@ public class ProductController {
      * @return
      */
     @PostMapping("/listForOrder")
-    public List<ProductInfoOutput> listForOrder(@RequestBody List<String> productIdList) {
+    public List<ProductInfoOutput> listForOrder(@RequestBody List<String> productIdList) throws InterruptedException {
+
+        // 测试hystrix的过期时间.
+        Thread.sleep(2000);
+
         return productService.findList(productIdList);
     }
 
