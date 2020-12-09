@@ -17,6 +17,13 @@ spring:
         myStreamReceived:
           group: order
           content-type: application/json
+  # zipkin配置.
+  zipkin:
+    base-url: http://localhost:9411/
+  # sleuth服务追踪百分比.
+  sleuth:
+    sampler:
+      rate: 100
 eureka:
   client:
     service-url:
@@ -44,3 +51,6 @@ management:
     web:
       exposure:
         include: "*"
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
