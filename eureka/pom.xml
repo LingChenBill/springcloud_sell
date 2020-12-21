@@ -20,9 +20,17 @@
     </properties>
 
     <dependencies>
+        <!--eureka server config.-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
+        <!--logback gelf config.-->
+        <dependency>
+            <groupId>de.siegmar</groupId>
+            <artifactId>logback-gelf</artifactId>
+            <version>3.0.0</version>
         </dependency>
 
         <dependency>
