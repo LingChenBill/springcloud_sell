@@ -29,6 +29,7 @@
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <product-client.version>0.0.1-SNAPSHOT</product-client.version>
         <order-common.version>0.0.1-SNAPSHOT</order-common.version>
+        <logback-gelf.version>3.0.0</logback-gelf.version>
     </properties>
 
     <dependencyManagement>
@@ -40,16 +41,23 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
+            <!--product client config.-->
             <dependency>
                 <groupId>com.lc</groupId>
                 <artifactId>product-client</artifactId>
                 <version>${product-client.version}</version>
             </dependency>
+            <!--order common config.-->
             <dependency>
                 <groupId>com.lc</groupId>
                 <artifactId>order-common</artifactId>
                 <version>${order-common.version}</version>
+            </dependency>
+            <!--logback gelf config.-->
+            <dependency>
+                <groupId>de.siegmar</groupId>
+                <artifactId>logback-gelf</artifactId>
+                <version>${logback-gelf.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

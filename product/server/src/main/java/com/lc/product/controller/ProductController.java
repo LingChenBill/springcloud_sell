@@ -10,6 +10,7 @@ import com.lc.product.utils.ResultVOUtil;
 import com.lc.product.vo.ProductInfoVO;
 import com.lc.product.vo.ProductVO;
 import com.lc.product.vo.ResultVO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/product")
+@Slf4j
 public class ProductController {
 
     @Autowired
@@ -84,6 +86,7 @@ public class ProductController {
 //        // 测试hystrix的过期时间.
 //        Thread.sleep(2000);
 
+        log.info("查询商品列表(为订单微服务提供).");
         return productService.findList(productIdList);
     }
 

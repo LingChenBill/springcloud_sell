@@ -50,9 +50,16 @@
             <artifactId>product-common</artifactId>
         </dependency>
 
+        <!--lombok config.-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!--logback gelf config.-->
+        <dependency>
+            <groupId>de.siegmar</groupId>
+            <artifactId>logback-gelf</artifactId>
         </dependency>
 
         <dependency>

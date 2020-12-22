@@ -14,6 +14,7 @@ import com.lc.order.utils.KeyUtil;
 import com.lc.product.client.ProductClient;
 import com.lc.product.common.DecreaseStockInput;
 import com.lc.product.common.ProductInfoOutput;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,7 @@ import java.util.stream.Collectors;
  * @date: 2020/11/1
  */
 @Service
+@Slf4j
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
@@ -53,6 +55,8 @@ public class OrderServiceImpl implements OrderService {
         List<String> productIdList = orderDto.getOrderDetailList().stream()
                 .map(OrderDetail::getProductId)
                 .collect(Collectors.toList());
+
+        log.info("查询商品信息(调用商品服务)");
         List<ProductInfoOutput> productInfoList = productClient.listForOrder(productIdList);
 
         // 计算总价.
