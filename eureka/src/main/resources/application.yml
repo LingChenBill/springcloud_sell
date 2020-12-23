@@ -9,3 +9,14 @@ eureka:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
     register-with-eureka: false
     fetch-registry: false
+keycloak:
+  auth-server-url: http://127.0.0.1:8180/auth
+  realm: lc-myrealm
+  public-client: true
+  resource: lc-eureka
+  security-constraints:
+    - authRoles:
+        - lc-myrole
+      securityCollections:
+        - patterns:
+            - /*
